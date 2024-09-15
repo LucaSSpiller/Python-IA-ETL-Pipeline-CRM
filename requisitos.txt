@@ -1,0 +1,68 @@
+REQUISITOS FUNCIONAIS E VALIDAÇÕES 
+
+1. TÍTULO DO SISTEMA:
+    - DESCRIÇÃO: O sistema deve exibir o título "Sistema de CRM e Vendas da ZapFlow" no topo da página.
+    - JUSTIFICATIVA: Identificar claramente o sistema e sua finalidade ao usuário.
+
+2. CAMPOS DE ENTRADA DE DADOS:
+    - O sistema deve fornecer campos para inserção de dados de venda. Cada campo deve ser claramente identificado e deve
+    aceitar o tipo de entrada correto conforme descrito abaixo.
+    
+DETALHAMENTO DOS CAMPOS E VALIDAÇÇÕES:
+    . EMAIL DO VENDEDOR:
+        - Descrição: Campo de texto para inserção do email do vendedor.
+        - Tipo de Entrada: text_input (String)
+        . Validação esperada:
+            - Deve ser um email válido no formato padrão (vendedor@exemplo.com)
+            - Verificar se o campo não está vazio.
+        - Exemplo de uso: O usuário insere um email válido, como vendedor@exemplo.com
+
+    . DATA DA COMPRA:
+        - Descrição: Campo para selecionar a data em que a venda foi realizada
+        - Tipo de entrada: data_input (Data)
+        - Valor Padrão: A Data atual (datetime.now())   
+        . Validação esperada:
+            - A data deve estar dentro do intervalo permitido (entre 01/09/2024 e 13/09/2024)
+            - Não permitir datas fora do intervalo especificado.
+        - Exemplo de uso: O usuário seleciona uma data como 03/09/2024.
+
+    . HORA DA COMPRA:   
+        - Descrição: Campo para selecionar a hora em que a venda foi realizada.
+        - Tipo de Entrada: time_input (Hora).
+        - Valor Padrão: 09:00 (hora inicial padrão)
+        . Validação esperada:
+            - A hora deve ser inserida dentro do intervalo de 09:00 à 17:00.
+        - Exemplo de uso: O usuário seleciona 10:10.
+
+    . VALOR DA VENDA:
+        - Descrição: Campo numérico para inserir o valor monetário de venda realizada.
+        - Tipo de Entrada: number_input (Float)
+        - Valor mínimo: 0.0 (não são permitidos números negativos)
+        - Formato: Decimal com duas casas (format = "%.2f)
+        . Validação esperada: 
+            - Deve ser um número positivo maior que zero
+            - Deve estar no formato adequado com duas casas decimais.
+        - Exemplo de uso: O usuário insere 1500.00
+
+    . QUANTIDADE DE PRODUTOS
+        - Descrição: Campo numérico para inserir a quantidade de produtos vendidos.
+        - Tipo de Entrada: number_input (Inteiro)
+        - Valor mínimo: 1 (quantidade mínima permitida)
+        - Passo: Incremento de 1 unidade por ajuste
+        . Validação Esperada:
+            - Deve ser um número inteiro positivo.
+            - Não deve ser zero ou negativo.
+        - Exemplo de uso: O usuário insere 3.
+
+    . PRODUTO:
+        - Descrição: Campo de seleção para escolher o produto vendido
+        - Tipo de Entrada: selectbox (Seleção)
+        . Opções disponíveis:
+            - "ZapFlow com Gemini"
+            - "ZapFlow com ChatGPT"
+            - "ZapFlow com Llama 3.0"
+        . Validação Esparada:
+            - O produto selecionado deve ser uma das opções válidas
+            - Não permitir seleção de produtos fora das opções listadas
+        - Exemplo de Uso: O usuário seleciona "ZapFlow com ChatGPT"
+
